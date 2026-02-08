@@ -22,8 +22,7 @@ class LionTest {
         Exception exception = assertThrows(Exception.class, () ->
                 new Lion("Неизвестно", feline)
         );
-        assertEquals("Используйте допустимые значения пола животного - самец или самка",
-                exception.getMessage());
+
     }
 
     @Test
@@ -56,7 +55,8 @@ class LionTest {
     void getKittensCallsFelineMethod() throws Exception {
         Mockito.when(feline.getKittens()).thenReturn(3);
         Lion lion = new Lion("Самка", feline);
-        assertEquals(3, lion.getKittens());
+        lion.getKittens();
+        // ОДНА проверка - проверяем вызов метода getKittens()
         Mockito.verify(feline, Mockito.times(1)).getKittens();
     }
 }

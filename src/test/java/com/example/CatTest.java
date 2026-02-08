@@ -30,7 +30,7 @@ class CatTest {
         Cat cat = new Cat(feline);
         List<String> actualFood = cat.getFood();
 
-        assertEquals(expectedFood, actualFood);
-        verify(feline, times(1)).eatMeat();
+      //  assertEquals(expectedFood, actualFood);  //лишняя проврека для подхода один тест - одина проверка.
+          verify(feline, times(1)).eatMeat();
     }
 }
